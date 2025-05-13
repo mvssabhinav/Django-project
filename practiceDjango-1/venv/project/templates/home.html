@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form action="" method="post">
+    {% csrf_token %}
+
+    <h1>hi this is abhinav</h1>
+    <label for="direct_name">Director name:</label>
+    <input type="text" name="direct_name" id="direct_name" required>
+    <label for="movie_name">movie name:</label>
+    <input type="text" name="movie_name" id="movie_name" required>
+    <label for="total_movies">total movies directed:</label>
+    <input type="number" name="total_movies" id="total_movies" required>
+    <button>submit</button>
+</form>
+</body>
+</html>

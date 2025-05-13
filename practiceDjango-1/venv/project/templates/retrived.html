@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hi this is retrived page</h1>
+    <ul>
+        {% for database in exampledatabase %}
+        <table>
+            <tr>
+                <th>director name</th>
+                <th>movie</th>
+                <th>total movies</th>
+            </tr>
+            <tr>
+                <th>{{database.director}}</th>
+                <th>{{database.movie_name}}</th>
+                <th>{{database.total_directed}}</th>
+            </tr>
+        {% endfor %}
+        </table>
+
+    </ul>
+</body>
+</html>
