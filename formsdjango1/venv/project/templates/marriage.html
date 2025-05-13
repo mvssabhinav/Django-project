@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marriage</title>
+    {% block content %}
+    <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            text-align: center;
+            margin-top:70px ;
+
+        }
+        form{
+            border: 2px solid;
+            border-radius: 8px;
+            width: fit-content;
+            padding: 20px;
+            font-size: 20px;
+            margin-left: 36%;
+            margin-top: 2%;
+            margin-bottom: 50px;
+            box-shadow: 4px 4px 5px;
+
+        }
+        input{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://img.freepik.com/free-vector/hand-drawn-wedding-planner-twitter-header_23-2149259521.jpg?ga=GA1.1.1626343651.1695441162&semt=ais_hybrid" alt="">
+
+        <ul>
+            <li><a class="list" href="{% url 'eventform' %}">Event registration Form</a></li>
+            <li><a class="list" href="{% url 'birthday' %}">Birthday Form</a></li>
+            <li><a class="list" href="{% url 'marriage' %}">Marriage Form</a></li>
+
+        </ul>
+    </nav>
+    <h1>Marriage Event Form</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <label for="customer_name">customer name</label>
+        <input type="text" name="customer_name" id="customer_name"required><br><br>
+        <label for="Email">Email</label>
+        <input type="email" name="Email" id="Email"required><br><br>
+        <label for="phone_no">Phone no</label>
+        <input type="number" name="phone_no" id="phone_no"required><br><br>
+        <label for="Photographer">Photographer</label>
+        <input type="text" name="Photographer" id="Photographer" required><br><br>
+        <label for="Capacity">capacity</label>
+        <input type="number" name="capacity" id="capacity" required><br><br>
+        <label for="No_of_chairs">No of chairs</label>
+        <input type="number" name="No_of_chairs" id="No_of_chairs" required><br><br>
+        <label for="Catering">catering</label>
+        <input type="text" name="catering" id="catering" required><br><br>
+        <label for="Theam_decorator">Theam decorator</label>
+        <input type="text" name="Theam_decorator" id="Theam_decorator"required><br><br>
+        <label for="Pre_wedding">Pre wedding</label>
+        <input type="text" name="Pre_wedding" id="Pre_wedding"><br><br>
+        <label for="Mehandi_Artist">Mehandi Artist</label>
+        <input type="text" name="Mehandi_Artist" id="Mehandi_Artist"><br><br>
+        <label for="Bride_jewalary">Bride jewalary for Rent </label>
+        <input type="text" name="Bride_jewalary" id="Bride_jewalary"><br><br>
+        <label for="Music_Dance">Music Dance</label>
+        <input type="text" name="Music_Dance" id="Music_Dance"><br><br>
+        <label for="Invitation">Invitation Gifts</label>
+        <input type="text" name="Invitation" id="Invitation"><br><br>
+        <button>submit</button><br>
+        <a href="{% url 'retrieved' %}">View given Details</a>
+
+    </form>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    {% block content %}
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+   
+        h1{
+            text-align: center;
+            margin-top:70px ;
+
+        }
+        form{
+            border: 2px solid;
+            border-radius: 8px;
+            width: fit-content;
+            padding: 20px;
+            font-size: 20px;
+            margin-left: 36%;
+            margin-top: 2%;
+            margin-bottom: 50px;
+            box-shadow: 4px 4px 5px;
+
+        }
+        input{
+            float: right;
+            width: 60%;
+        }
+        label{
+            vertical-align: top;
+        }
+      
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://img.freepik.com/free-vector/hand-drawn-wedding-planner-twitter-header_23-2149259521.jpg?ga=GA1.1.1626343651.1695441162&semt=ais_hybrid" alt="">
+
+        <ul>
+            <li><a class="list" href="{% url 'eventform' %}">Event registration Form</a></li>
+            <li><a class="list" href="{% url 'birthday' %}">Birthday Form</a></li>
+            <li><a class="list" href="{% url 'marriage' %}">Marriage Form</a></li>
+
+        </ul>
+    </nav>
+    
+    <h1>Event Registor Form </h1>
+   
+    <form action="" method="post">
+        {% csrf_token %}
+
+        <div>
+            <label for="customer_Name">Customer Name</label>
+            <input type="text" name="customer_Name" id="customer_Name" required><br><br>
+            <label for="Address">Address</label>
+            <textarea name="Address" id="Address" cols="38" rows="6" required></textarea><br><br>
+            <label for="Email">Email</label>
+            <input type="email" name="Email" id="Email"><br><br>
+            <label for="Phone_no">Phone No</label>
+            <input type="tel" name="Phone_no" id="Phone_no"><br><br>
+            <label for="Event_name">Event Name</label>
+            <input type="text" name="Event_name" id="Event_name"><br><br>
+            <label for="Venue">Venue</label>
+           <input type="text" name="Venue" id="Venue"><br><br>
+            <label for="">Hall</label>
+            <input type="text" name="hall" id="options"><br><br>
+            <label for="date">Date</label>
+            <input type="date" name="date" id=""><br><br>
+            <label for="Expected_Cost">Expected Cost</label>
+           <input type="number" name="Expected_Cost" id="Expected_Cost"><br><br>
+            <button>Registor</button><br>
+            <a href="{% url 'retrieved' %}">View given Details</a>
+        </div>
+    </form>
+    {% endblock  %}
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block content %}
+    <style>
+        .section{
+            margin-bottom: 20%;
+        }
+        .section h1{
+            margin-top: 10%;
+            text-align: center;
+        }
+        .section a{
+            text-decoration: none;
+            margin-left: 45%;
+        
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <img src="https://img.freepik.com/free-vector/hand-drawn-wedding-planner-twitter-header_23-2149259521.jpg?ga=GA1.1.1626343651.1695441162&semt=ais_hybrid" alt="">
+        <ul>
+            <li><a class="list" href="{% url 'eventform' %}">Event registration Form</a></li>
+            <li><a class="list" href="{% url 'birthday' %}">Birthday Form</a></li>
+            <li><a class="list" href="{% url 'marriage' %}">Marriage Form</a></li>
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+
+        </ul>
+    </nav>
+    <div class="section">
+    <h1>welcome {{username}}...!</h1>
+    <a class="list" href="{% url 'retrieved' %}">Click here view details</a>
+    </div>
+
+    
+    {% endblock %}
+</body>
+</html>

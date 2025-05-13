@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>staffRetrivedData</title>
+    <style>
+            table,tr,th{
+        border: 2px solid;
+        border-collapse: collapse;
+        padding: 10px;
+
+    }
+    .tag{
+        float: right;
+        text-decoration: none;
+        font-size: 20px;
+        border: 1px solid;
+        padding: 5px;
+        border-radius: 8px;
+        margin-right: 40px;
+    
+    }
+    </style>
+</head>
+<body>
+    <a class="tag" href="{% url 'logout' %}">Logout</a>
+
+    <h1>Welcome M.V.S.S.Abhinav</h1>  
+
+    <input type="search" name="" id="">
+
+    <h4>User registered in Event registration form: </h4>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Event Name</th>
+            <th>Venue</th>
+            <th>Hall</th>
+            <th>Event Date</th>
+            <th>Expected Cost</th>
+            <th>status</th>
+            <th>proceed</th>
+        </tr>
+        {% for event in info %}
+        <tr>
+            <td>{{ event.id }}</td>
+            <td>{{ event.customer_name }}</td>
+            <td>{{ event.address }}</td>
+            <td>{{ event.email }}</td>
+            <td>{{ event.phone_number }}</td>
+            <td>{{ event.event_name }}</td>
+            <td>{{ event.venue }}</td>
+            <td>{{ event.hall }}</td>
+            <td>{{ event.event_date }}</td>
+            <td>{{ event.expected_cost }}</td>
+            <td><a href="{% url 'delete_event' event.id %}">Delete</a></td>
+            <td><a href="{% url 'proceed_event' event.id %}">Proceed</a></td>
+            
+        </tr>
+
+        {% endfor %}
+    </table>
+
+
+    <h4>User registered in birthday registration form:</h4>
+
+    <table>
+        <tr>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Capacity</th>
+            <th>No of Chairs</th>
+            <th>Catering</th>
+            <th>Theme Decorators</th>
+            <th>Game Host</th>
+            <th>Magician</th>
+            <th>Tattoo Artist</th>
+            <th>status</th>
+        </tr>
+        {% for birthday in birthdayfunctions %}
+        <tr>
+            <td>{{ birthday.customer_name }}</td>
+            <td>{{ birthday.address }}</td>
+            <td>{{ birthday.email }}</td>
+            <td>{{ birthday.phone_no }}</td>
+            <td>{{ birthday.capacity }}</td>
+            <td>{{ birthday.No_of_chairs }}</td>
+            <td>{{ birthday.catering }}</td>
+            <td>{{ birthday.theam_decorators }}</td>
+            <td>{{ birthday.game_host }}</td>
+            <td>{{ birthday.magician }}</td>
+            <td>{{ birthday.tatoo_artist }}</td>
+            <td><a href="{% url 'delete_birthday' birthday.id %}">Delete</a> </td>
+        </tr>
+
+        {% endfor %}
+    </table>
+    
+
+
+    <h4>User registered in Marriage registration form:</h4>
+
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Customer Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Photographer</th>
+            <th>Capacity</th>
+            <th>No of Chairs</th>
+            <th>Catering</th>
+            <th>Theme Decorators</th>
+            <th>Pre-Wedding</th>
+            <th>Mehandi Artist</th>
+            <th>Bride Jewellery Rent</th>
+            <th>Music Dance</th>
+            <th>Invitation Gifts</th>
+            <th>status</th>
+        </tr>
+        {% for marriage in marriagefunction %}
+        <tr>
+            <td>{{ marriage.id }}</td>
+            <td>{{ marriage.customer_name }}</td>
+            <td>{{ marriage.email }}</td>
+            <td>{{ marriage.phone_no }}</td>
+            <td>{{ marriage.photographer }}</td>
+            <td>{{ marriage.capacity }}</td>
+            <td>{{ marriage.No_of_chairs }}</td>
+            <td>{{ marriage.catering }}</td>
+            <td>{{ marriage.theam_decorators }}</td>
+            <td>{{ marriage.pre_wedding }}</td>
+            <td>{{ marriage.mehandi_artist }}</td>
+            <td>{{ marriage.bride_jewellery_rent }}</td>
+            <td>{{ marriage.music_dance }}</td>
+            <td>{{ marriage.invitation_gifts }}</td>
+            <td><a href="{% url 'delete_marriage' marriage.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+
+</ul>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Event Management</title>
+    <style>
+      body{
+        background-color: black;
+      }
+      main {
+        padding: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        background-color: black;
+        color: white;
+      }
+
+      .about-intro,
+      .mission,
+      .team,
+      .values {
+        margin-bottom: 40px;
+      }
+
+      .about-intro h1,
+      .mission h2,
+      .team h2,
+      .values h2 {
+        color: #007bff;
+      }
+
+      .team {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+
+      .team-member {
+        flex: 1 1 calc(50% - 20px);
+        box-sizing: border-box;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .team-member img {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+
+      .values ul {
+        list-style-type: none;
+        padding: 0;
+      }
+
+      .values ul li {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="about-us">
+        <h1>About Us</h1>
+        <div class="about-content">
+          <div class="mission-vision">
+            <h2>Our Mission</h2>
+            <p>
+              At Event Management Co., our mission is to create unforgettable
+              events that exceed our clients' expectations. We are dedicated to
+              delivering exceptional experiences through meticulous planning and
+              creative execution.
+            </p>
+
+            <h2>Our Vision</h2>
+            <p>
+              Our vision is to be the leading event management company, known
+              for our innovative approach and unparalleled service. We strive to
+              set new standards in the industry and be recognized as the top
+              choice for clients seeking memorable and successful events.
+            </p>
+          </div>
+
+          <div class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-member">
+              <img src="https://img.freepik.com/free-photo/cheerful-curly-business-girl-wearing-glasses_176420-206.jpg?ga=GA1.1.1896798778.1723628153&semt=ais_hybrid" alt="Team Member 1" />
+              <h3>Jane Doe</h3>
+              <p>Event Planner</p>
+              <p>
+                Jane has over 10 years of experience in event planning,
+                specializing in corporate events and weddings. Her attention to
+                detail and creativity make her an invaluable asset to our team.
+              </p>
+            </div>
+            <div class="team-member">
+              <img src="https://img.freepik.com/free-photo/artist-white_1368-3546.jpg?ga=GA1.1.1896798778.1723628153&semt=ais_hybrid" alt="Team Member 2" />
+              <h3>John Smith</h3>
+              <p>Logistics Coordinator</p>
+              <p>
+                John ensures that every event runs smoothly by handling all
+                logistics and operations. With a background in event
+                coordination, he excels at managing complex schedules and vendor
+                relationships.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <a class="list" href="{% url 'home' %}"> <b><button style="width: 100px; height: 40px; border-radius: 8px; margin-left: 48%; background-color: #007bff;color: white; cursor: pointer;">home</button> </b></a> 
+
+  </body>
+</html>

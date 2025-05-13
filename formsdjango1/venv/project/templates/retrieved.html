@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% block content %}
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav{
+            top: 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            background-color: rgb(40, 44, 52);
+            
+        }
+        nav img{
+            height: 70px;
+        }
+        nav ul{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-evenly;
+        }
+        ul{
+            list-style-type: none;
+            font-family: 'Montserrat';
+
+        }
+        ul .list{
+            text-decoration: none;
+            font-size: 20px;
+        }
+        
+        header{
+            height: 50px;
+        }
+        table,tr,th{
+        border: 2px solid;
+        border-collapse: collapse;
+        padding: 10px;
+
+    }
+        .btn{
+
+            position: absolute;
+            left: 45%;
+            top: 90%;
+            text-decoration: none;
+        }
+        button{
+            cursor: pointer;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: 3px;
+            padding: 10px;
+            width: 80px;
+            margin-top: 30px;
+            margin-left: 45%;
+        }
+        .btn:hover{
+            background-color: gray;
+            transition: 1s;
+            
+        }
+    
+    </style>
+</head>
+<body>
+
+    <nav>
+        <img src="https://img.freepik.com/free-vector/hand-drawn-wedding-planner-twitter-header_23-2149259521.jpg?ga=GA1.1.1626343651.1695441162&semt=ais_hybrid" alt="">
+        <ul>
+          
+            <li><a href="{% url 'logout' %}">Logout</a></li>
+
+        </ul>
+    </nav>
+
+    <h1>Here is your retrieved data:</h1>
+
+    <ul>
+        <h4>User registered in Event registration form: </h4>
+
+
+        {% for event in info %}
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Customer Name</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Event Name</th>
+                <th>Venue</th>
+                <th>hall</th>
+                <th>Event Date</th>
+                <th>Expected Cost</th>
+            </tr>
+                <tr>
+                    <th>{{event.id}}</th>
+                    <th>{{ event.customer_name}}</th>
+                    <th>{{event.address}}</th>
+                    <th>{{event.email}}</th>
+                    <th>{{event.phone_number}}</th>
+                    <th>{{event.event_name}}</th>
+                    <th>{{event.venue}}</th>
+                    <th>{{event.hall}}</th>
+                    <th>{{event.event_date}}</th>
+                    <th>{{event.expected_cost}}</th>
+                </tr>
+        </table>
+        
+        {% endfor %}
+            
+
+        <h4>User registered in birthday registration form:</h4>
+
+        {% for birthday in birthdayfunctions %}
+        <table>
+            <tr>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Capacity</th>
+                <th>No of Chairs</th>
+                <th>Catering</th>
+                <th>Theam Decorators</th>
+                <th>Game Host</th>
+                <th>Magician</th>
+                <th>Tatoo Artist</th>
+
+
+            </tr>
+                <tr>
+                    <th>{{birthday.customer_name}}</th>
+                    <th>{{birthday.email}} </th>
+                    <th>{{birthday.phone_no}}</th>
+                    <th>{{birthday.capacity}}</th>
+                    <th>{{birthday.No_of_chairs}} </th>
+                    <th>{{birthday.catering}}</th>
+                    <th>{{birthday.theam_decorators}} </th>
+                    <th>{{birthday.game_host}}</th>
+                    <th>{{birthday.magician}}</th>
+                    <th>{{birthday.tatoo_artist}}</th>
+                </tr>
+        </table>
+        {% endfor %}
+
+
+        <h4>User registered in Marriage registration form:</h4>
+
+        {% for marriage in marriagefunction %}
+
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Customer Name</th>
+                <th>Email</th>
+                <th>Phone Number</th>
+                <th>Photographer</th>
+                <th>Capacity</th>
+                <th>No of Chairs</th>
+                <th>Catering</th>
+                <th>Theme Decorators</th>
+                <th>Pre Wedding</th>
+                <th>Mehandi Artist</th>
+                <th>Bride Jewellery Rent</th>
+                <th>Music Dance</th>
+                <th>Invitation Gifts</th>
+            </tr>
+            <tr>
+                <th>{{marriage.id}}</th>
+                <th>{{marriage.customer_name}}</th>
+                <th>{{marriage.email}}</th>
+                <th>{{marriage.phone_no}}</th>
+                <th>{{marriage.photographer}}</th>
+                <th>{{marriage.capacity}}</th>
+                <th>{{marriage.No_of_chairs}}</th>
+                <th>{{marriage.catering}}</th>
+                <th>{{marriage.theam_decorators}}</th>
+                <th>{{marriage.pre_wedding}}</th>
+                <th>{{marriage.mehandi_artist}}</th>
+                <th>{{marriage.bride_jewellery_rent}}</th>
+                <th>{{marriage.music_dance}}</th>
+                <th>{{marriage.invitation_gifts}}</th>
+            </tr>
+        </table>
+        <p>Status: {{ event.status_message }}</p>
+
+        {% endfor %}
+
+    </ul>
+
+    <a href="{% url 'welcomepage' %}"><button>home</button></a>
+    {% endblock %}
+</body>
+</html>
